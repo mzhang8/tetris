@@ -1,0 +1,64 @@
+#grid {
+	background-color: #3e3e3e;
+}
+
+tr {
+	margin: 0;
+}
+
+h1, p {
+	font-family: "Courier New";
+	color: white;
+}
+
+body {
+	background-color: black;
+}
+
+#startbutton, #pausebutton {
+	font-family: "Courier New";
+	font-weight: bold;
+	width: 120px;
+	height: 50px;
+	margin: 0px 2px;
+}
+
+.buttons {
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+td {
+	width: 20px;
+	height: 20px;
+	border: 1px solid #aaa;
+}
+
+#content {
+	width: 900px;
+}
+
+.interface {
+	width: 300px;
+	border: none;
+}
+
+#mobilebutton, #uparrow, #downarrow, #rightarrow, #leftarrow, #spacebar {
+	font-family: "Courier New";
+	font-weight: bold;
+	width: 60px;
+	height: 30px;
+	margin: 0px 2px;
+}
+
+#uparrow, #downarrow, #rightarrow, #leftarrow, #spacebar {
+	margin: 5px 15px;
+	width: 80px;
+	height: 50px;
+	visibility: hidden;
+}
+
+#spacebar {
+	width: 200px;
+}

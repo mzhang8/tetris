@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>Tetris.js</title>
+	<link rel="icon" href="img/tetris-icon.gif">
+  	<link rel="apple-icon" href= "img/tetris-icon.gif">
+	<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+	<button onclick="revealControls()" type="button" id="mobilebutton">Mobile</button>
+	<h1 align="center">Tetris.js</h1>
+	<p align="center" id="score">Score: 0</p>
+	 
+	 <table id="content" align="center">
+	 	<tr>
+			<td class="interface" align="center">
+				<button onclick="drop()" type="button" id="spacebar">SPACE</button>
+			</td>
+			<td class="interface">
+				<table id="grid" align="center">
+					<tr>	
+						<td class="r0"></td>
+						<td class="r0"></td>
+						<td class="r0"></td>
+						<td class="r0"></td>
+						<td class="r0"></td>
+						<td class="r0"></td>
+						<td class="r0"></td>
+						<td class="r0"></td>
+						<td class="r0"></td>
+						<td class="r0"></td>
+					</tr>
+					<tr>	
+						<td class="r1"></td>
+						<td class="r1"></td>
+						<td class="r1"></td>
+						<td class="r1"></td>
+						<td class="r1"></td>
+						<td class="r1"></td>
+						<td class="r1"></td>
+						<td class="r1"></td>
+						<td class="r1"></td>
+						<td class="r1"></td>
+					</tr>
+					<tr>
+						<td class="r2"></td>
+						<td class="r2"></td>
+						<td class="r2"></td>
+						<td class="r2"></td>
+						<td class="r2"></td>
+						<td class="r2"></td>
+						<td class="r2"></td>
+						<td class="r2"></td>
+						<td class="r2"></td>
+						<td class="r2"></td>
+					</tr>
+					<tr>
+						<td class="r3"></td>
+						<td class="r3"></td>
+						<td class="r3"></td>
+						<td class="r3"></td>
+						<td class="r3"></td>
+						<td class="r3"></td>
+						<td class="r3"></td>
+						<td class="r3"></td>
+						<td class="r3"></td>
+						<td class="r3"></td>
+					</tr>
+					<tr>
+						<td class="r4"></td>
+						<td class="r4"></td>
+						<td class="r4"></td>
+						<td class="r4"></td>
+						<td class="r4"></td>
+						<td class="r4"></td>
+						<td class="r4"></td>
+						<td class="r4"></td>
+						<td class="r4"></td>
+						<td class="r4"></td>
+					</tr>
+					<tr>
+						<td class="r5"></td>
+						<td class="r5"></td>
+						<td class="r5"></td>
+						<td class="r5"></td>
+						<td class="r5"></td>
+						<td class="r5"></td>
+						<td class="r5"></td>
+						<td class="r5"></td>
+						<td class="r5"></td>
+						<td class="r5"></td>
+					</tr>
+					<tr>
+						<td class="r6"></td>
+						<td class="r6"></td>
+						<td class="r6"></td>
+						<td class="r6"></td>
+						<td class="r6"></td>
+						<td class="r6"></td>
+						<td class="r6"></td>
+						<td class="r6"></td>
+						<td class="r6"></td>
+						<td class="r6"></td>
+					</tr>
+					<tr>
+						<td class="r7"></td>
+						<td class="r7"></td>
+						<td class="r7"></td>
+						<td class="r7"></td>
+						<td class="r7"></td>
+						<td class="r7"></td>
+						<td class="r7"></td>
+						<td class="r7"></td>
+						<td class="r7"></td>
+						<td class="r7"></td>
+					</tr>
+					<tr>
+						<td class="r8"></td>
+						<td class="r8"></td>
+						<td class="r8"></td>
+						<td class="r8"></td>
+						<td class="r8"></td>
+						<td class="r8"></td>
+						<td class="r8"></td>
+						<td class="r8"></td>
+						<td class="r8"></td>
+						<td class="r8"></td>
+					</tr>
+					<tr>
+						<td class="r9"></td>
+						<td class="r9"></td>
+						<td class="r9"></td>
+						<td class="r9"></td>
+						<td class="r9"></td>
+						<td class="r9"></td>
+						<td class="r9"></td>
+						<td class="r9"></td>
+						<td class="r9"></td>
+						<td class="r9"></td>
+					</tr>
+					<tr>
+						<td class="r10"></td>
+						<td class="r10"></td>
+						<td class="r10"></td>
+						<td class="r10"></td>
+						<td class="r10"></td>
+						<td class="r10"></td>
+						<td class="r10"></td>
+						<td class="r10"></td>
+						<td class="r10"></td>
+						<td class="r10"></td>
+					</tr>
+					<tr>
+						<td class="r11"></td>
+						<td class="r11"></td>
+						<td class="r11"></td>
+						<td class="r11"></td>
+						<td class="r11"></td>
+						<td class="r11"></td>
+						<td class="r11"></td>
+						<td class="r11"></td>
+						<td class="r11"></td>
+						<td class="r11"></td>
+					</tr>
+					<tr>
+						<td class="r12"></td>
+						<td class="r12"></td>
+						<td class="r12"></td>
+						<td class="r12"></td>
+						<td class="r12"></td>
+						<td class="r12"></td>
+						<td class="r12"></td>
+						<td class="r12"></td>
+						<td class="r12"></td>
+						<td class="r12"></td>
+					</tr>
+					<tr>
+						<td class="r13"></td>
+						<td class="r13"></td>
+						<td class="r13"></td>
+						<td class="r13"></td>
+						<td class="r13"></td>
+						<td class="r13"></td>
+						<td class="r13"></td>
+						<td class="r13"></td>
+						<td class="r13"></td>
+						<td class="r13"></td>
+					</tr>
+					<tr>
+						<td class="r14"></td>
+						<td class="r14"></td>
+						<td class="r14"></td>
+						<td class="r14"></td>
+						<td class="r14"></td>
+						<td class="r14"></td>
+						<td class="r14"></td>
+						<td class="r14"></td>
+						<td class="r14"></td>
+						<td class="r14"></td>
+					</tr>
+					<tr>
+						<td class="r15"></td>
+						<td class="r15"></td>
+						<td class="r15"></td>
+						<td class="r15"></td>
+						<td class="r15"></td>
+						<td class="r15"></td>
+						<td class="r15"></td>
+						<td class="r15"></td>
+						<td class="r15"></td>
+						<td class="r15"></td>
+					</tr>
+					<tr>
+						<td class="r16"></td>
+						<td class="r16"></td>
+						<td class="r16"></td>
+						<td class="r16"></td>
+						<td class="r16"></td>
+						<td class="r16"></td>
+						<td class="r16"></td>
+						<td class="r16"></td>
+						<td class="r16"></td>
+						<td class="r16"></td>
+					</tr>
+					<tr>
+						<td class="r17"></td>
+						<td class="r17"></td>
+						<td class="r17"></td>
+						<td class="r17"></td>
+						<td class="r17"></td>
+						<td class="r17"></td>
+						<td class="r17"></td>
+						<td class="r17"></td>
+						<td class="r17"></td>
+						<td class="r17"></td>
+					</tr>
+					<tr>
+						<td class="r18"></td>
+						<td class="r18"></td>
+						<td class="r18"></td>
+						<td class="r18"></td>
+						<td class="r18"></td>
+						<td class="r18"></td>
+						<td class="r18"></td>
+						<td class="r18"></td>
+						<td class="r18"></td>
+						<td class="r18"></td>
+					</tr>
+					<tr>
+						<td class="r19"></td>
+						<td class="r19"></td>
+						<td class="r19"></td>
+						<td class="r19"></td>
+						<td class="r19"></td>
+						<td class="r19"></td>
+						<td class="r19"></td>
+						<td class="r19"></td>
+						<td class="r19"></td>
+						<td class="r19"></td>
+					</tr>
+				</table>
+			</td>
+			<td class="interface" align="center">
+				<button onclick="rotate()" type="button" id="uparrow">&#9650;</button><br>
+				<button onclick="moveLeft()" type="button" id="leftarrow">&#9668;</button>
+				<button onclick="moveRight()" type="button" id="rightarrow">&#9658;</button><br>
+				<button onclick="moveDown()" type="button" id="downarrow">&#9660;</button>
+			</td>
+		</tr>
+	</table>
+
+	<div class="buttons">
+		<button onclick="start()" type="button" id="startbutton">Start</button>
+		<button onclick="pause()" type="button" id="pausebutton">Pause</button>
+	</div>
+
+	<p align="center"><br><br><strong>Instructions:</strong></p>
+	<p align="center">Use the control keys to move or rotate each tetrimino block. <br><br>Use the space bar to drop the block quickly.<br><br>Press the 'S' key or left button to start the game. <br><br>Press the 'P' key or right button to pause the game.</p>
+
+	<script src="js/javascript.js"></script>
+</body>
+</html>
